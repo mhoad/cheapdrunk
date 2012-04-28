@@ -3,7 +3,6 @@ HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-gem 'sqlite3'
 gem 'jquery-rails'
 gem "devise", ">= 2.1.0.rc"
 gem "simple_form"
@@ -19,6 +18,7 @@ end
 group :development, :test do
   gem "rspec-rails", ">= 2.9.0.rc2"
   gem "factory_girl_rails", ">= 3.2.0"
+  gem 'sqlite3'
 end
 
 group :test do
@@ -30,6 +30,10 @@ group :development do
   gem "guard-bundler", ">= 0.1.3"
   gem "guard-rails", ">= 0.0.3"
   gem "guard-rspec", ">= 0.4.3"
+end
+
+group :production do
+  gem 'pg', '0.12.2'
 end
 
 #Ensure that the relevant gems are loaded depending upon the OS
