@@ -42,3 +42,4 @@ Cheapdrunk::Application.configure do
   FACEBOOK_APP_SECRET="2792ebcf1d1163788539266fbb729dc3"
 
 end
+ 
