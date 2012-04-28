@@ -8,6 +8,7 @@ gem "devise", ">= 2.1.0.rc"
 gem "simple_form"
 gem "will_paginate", ">= 3.0.3"
 gem 'pg', '0.12.2'
+gem "omniauth-facebook"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -32,7 +33,7 @@ group :development do
   gem "guard-rspec", ">= 0.4.3"
 end
 
-#Ensure that the relevant gems are loaded depending upon the OS
+#Ensure that only the relevant gems are loaded depending upon the OS
 case HOST_OS
   when /darwin/i
     gem 'rb-fsevent', :group => :development
