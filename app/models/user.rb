@@ -8,8 +8,6 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :admin
   # attr_accessible :title, :body
 
-  has_many :authentications
-
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
   data = access_token.extra.raw_info
   if user = self.find_by_email(data.email)
@@ -34,7 +32,8 @@ def self.find_for_twitter_oauth(access_token, signed_in_resource = nil)
     if user = User.where(:name => data.screen_name).first
         user
     else
-        User.create!(:name => data.screen_name, :password => Devise.friendly_token)
+        #Temporary hack to resolve the required email issue with Twitter and Devise
+        User.create!(:name => data.screen_name, :email => "#{data.screen_name}@twitter.com", :password => Devise.friendly_token)
     end
 end
 end
