@@ -84,4 +84,7 @@ Cheapdrunk::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  FACEBOOK_APP_ID="281369925291166"
+  FACEBOOK_APP_SECRET="b59e8aef72049ea8c9ef6538df7eee25"
 end
