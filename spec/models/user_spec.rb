@@ -4,10 +4,11 @@ describe User do
   
   before(:each) do
     @attr = { 
-      :name => "Example User",
-      :email => "user@example.com",
-      :password => "foobar",
-      :password_confirmation => "foobar"
+      :name                   => "Example User",
+      :email                  => "user@example.com",
+      :password               => "foobar",
+      :password_confirmation  => "foobar",
+      :admin                  => false
     }
   end
   
@@ -96,6 +97,23 @@ describe User do
 
     it "should set the encrypted password attribute" do
       @user.encrypted_password.should_not be_blank
+    end
+
+  end
+
+  describe "admin users" do
+
+    before(:each) do
+      @user = User.new(@attr)
+      @user.update_attribute :admin, true
+    end
+
+    it "should have an admin attribute" do
+      @user.should respond_to(:admin)
+    end
+
+    it "should be an admin user" do
+      @user.admin.should be_true
     end
 
   end
