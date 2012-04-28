@@ -1,4 +1,6 @@
 require "omniauth-facebook"
+require "omniauth-twitter"
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -214,6 +216,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :facebook, FACEBOOK_APP_ID, FACEBOOK_APP_SECRET
+  config.omniauth :twitter, TWITTER_APP_ID, TWITTER_APP_SECRET
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

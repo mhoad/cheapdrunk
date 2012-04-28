@@ -9,9 +9,10 @@ gem "simple_form"
 gem "will_paginate", ">= 3.0.3"
 gem 'pg', '0.12.2'
 gem "omniauth-facebook"
+gem "omniauth-twitter"
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem "bootstrap-sass", ">= 2.0.2"

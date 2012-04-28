@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :admin
   # attr_accessible :title, :body
 
+  has_many :authentications
+
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
   data = access_token.extra.raw_info
   if user = self.find_by_email(data.email)
@@ -17,7 +19,7 @@ class User < ActiveRecord::Base
   end
 end
 
-def self.new_with_session(params, session)
+  def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"]
@@ -25,4 +27,14 @@ def self.new_with_session(params, session)
       end
     end
   end
+
+  #config omniauth twitter
+def self.find_for_twitter_oauth(access_token, signed_in_resource = nil)
+    data = access_token.extra.raw_info
+    if user = User.where(:name => data.screen_name).first
+        user
+    else
+        User.create!(:name => data.screen_name, :password => Devise.friendly_token)
+    end
+end
 end
