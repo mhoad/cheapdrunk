@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   if user = self.find_by_email(data.email)
     user
   else # Create a user with a stub password. 
-    self.create!(:name => data.first_name, :email => data.email, :password => Devise.friendly_token[0,20]) 
+    self.create!(:name => data.first_name, :email => data.email, :password => Devise.friendly_token[0,20], :oauth => true) 
   end
 end
 
@@ -55,7 +55,8 @@ def self.find_for_twitter_oauth(access_token, signed_in_resource = nil)
         user
     else
         #Temporary hack to resolve the required email issue with Twitter and Devise
-        User.create!(:name => data.screen_name, :email => "#{data.screen_name}@twitter.com", :password => Devise.friendly_token)
+        User.create!(:name => data.screen_name, :email => "#{data.screen_name}@twitter.com", 
+                                          :password => Devise.friendly_token, :oauth => true)
     end
 end
 end
