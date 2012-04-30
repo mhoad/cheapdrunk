@@ -30,6 +30,16 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :admin, :oauth
   # attr_accessible :title, :body
 
+  #Validations to ensure clean data
+
+  before_save { |user| user.email = email.downcase }
+
+  VALID_NAME_REGEX = /^\w[a-zA-Z ]+$/
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :name, presence: true, length:{ maximum: 50 }, format: { with: VALID_NAME_REGEX }
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false } 
+
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
   data = access_token.extra.raw_info
   if user = self.find_by_email(data.email)
