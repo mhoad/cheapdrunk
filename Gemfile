@@ -25,6 +25,7 @@ end
 
 group :test do
   gem "email_spec", ">= 1.2.1" 
+  gem 'capybara', '1.1.2'
 end
 
 group :development do
@@ -32,6 +33,7 @@ group :development do
   gem "guard-bundler", ">= 0.1.3"
   gem "guard-rails", ">= 0.0.3"
   gem "guard-rspec", ">= 0.4.3"
+  gem 'annotate', '~> 2.4.1.beta'
 end
 
 #Ensure that only the relevant gems are loaded depending upon the OS
