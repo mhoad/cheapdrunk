@@ -1,11 +1,23 @@
-<h1>Venues#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-<ul class="users">
-  <% @venues.each do |venue| %>
-    <li>
-      <%= link_to venue.name, venue %> signed up <%= venue.created_at.to_date %>
-    </li>
-  <% end %>
-</ul>
+    <div class="row-fluid offset2">
+    <div class="span8">
+	<h1>Browse Happy Hour Venues</h1>
+    <div class="row-fluid">
+    <% @venues.each do |venue| %>
+    <hr>
+        <div class="span8">
+    	<h3><%= link_to venue.name, venue %></h3> <br>
+    	<img src="http://placehold.it/80x80" class="venue-index-image">
+    	<span class="venue-index-text"><%= venue.description %></span>
+    </div>
+    <div class="span4 venue-index-details">
+    	<b><%= venue.street_address %></b> <br>
+    	<b><%= venue.suburb %></b>
+    </div>
+    
+    <% end %>
+    </div>
+    </div>
+    </div>
+
 
 <%= will_paginate %>

@@ -113,14 +113,42 @@ input, textarea, select, .uneditable-input {
   @extend .error;
  }
 
- /* Venue Page */
+ /* Venue Pages */
 
- .venue-title {
+ .venue-title h1{
  margin-bottom: 5px;
  text-align: left;
  font-size: 2.5em;
+
  }
-1
+
 .address {
 font-size: 1.05em;
  }
+
+.venue-index-image {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  vertical-align:text-top;
+  position: absolute;
+}
+
+.venue-index-details {
+  padding-top: 30px;
+  right: 500px;
+  text-align: right;
+  position: absolute;
+}
+
+.venue-index-text {
+ position: relative;
+ left: 90px;
+ width: 300px;
+}
+
+.divider {
+  height: 1px;
+  width: 450px;
+  background-color: #000fff;
+  padding-bottom: 10px;
+}

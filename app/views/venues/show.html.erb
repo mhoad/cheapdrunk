@@ -1,20 +1,23 @@
-<div class="page-header">
-	<h1 class="venue-title"><span itemprop="name"><%= @venue.name %></span></h1>
-</div>
-<div class="well" >
-<!-- to be implemented later	
-	<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-   	<meta itemprop="latitude" content="40.75" />
-   	<meta itemprop="longitude" content="73.98" /> -->
-	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-		<span itemprop="streetAddress" class="address"><b><%= @venue.street_address %></b></span><br>
-		<span itemprop="addressLocality" class="address"><b><%= @venue.suburb %></b></span>,
-		<span itemprop="postalCode" class="address"><b><%= @venue.postcode %></b></span>
-	</div> <!-- end postal address microdata-->
-	<p><span itemprop="telephone" class="address"><b><%= @venue.phone_number %></b></span></p>
-	<p><a itemprop="url" href="<%= @venue.url %>" rel="nofollow"><%= @venue.url %></a></p>
-	<p><small><b><%= @venue.description %></b></small></p>
-</div>
+<div itemscope itemtype="http://schema.org/BarOrPub">
+	<div class="row">
+    <div class="span8">
+      <div class="page-header">
+	     <h1 class="venue-title"><span itemprop="name"><%= @venue.name %></span></h1>
+      </div>
+      <div class="well" >
+      <!-- to be implemented later	
+	     <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+   	    <meta itemprop="latitude" content="40.75" />
+   	    <meta itemprop="longitude" content="73.98" /> -->
+	     <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		      <span itemprop="streetAddress" class="address"><b><%= @venue.street_address %></b></span><br>
+		      <span itemprop="addressLocality" class="address"><b><%= @venue.suburb %></b></span>,
+		      <span itemprop="postalCode" class="address"><b><%= @venue.postcode %></b></span>
+	     </div> <!-- end postal address microdata-->
+	     <p><span itemprop="telephone" class="address"><b><%= @venue.phone_number %></b></span></p>
+	     <p><a itemprop="url" href="<%= @venue.url %>" rel="nofollow"><%= @venue.url %></a></p>
+	     <p><small><b><%= @venue.description %></b></small></p>
+      </div>
 	<!-- to be implemented later
 	<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
 		<img src="img/5stars.gif"><br>
