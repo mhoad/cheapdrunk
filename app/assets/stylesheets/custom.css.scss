@@ -112,3 +112,15 @@ input, textarea, select, .uneditable-input {
   @extend .control-group;
   @extend .error;
  }
+
+ /* Venue Page */
+
+ .venue-title h1{
+ margin-bottom: 5px;
+ text-align: left;
+ font-size: 2.5em;
+ }
+1
+.address {
+font-size: 1.05em;
+ }

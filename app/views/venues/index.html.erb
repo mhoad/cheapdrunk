@@ -3,7 +3,7 @@
 <ul class="users">
   <% @venues.each do |venue| %>
     <li>
-      <%= link_to venue.name, user %> signed up <%= user.created_at.to_date %>
+      <%= link_to venue.name, venue %> signed up <%= venue.created_at.to_date %>
     </li>
   <% end %>
 </ul>

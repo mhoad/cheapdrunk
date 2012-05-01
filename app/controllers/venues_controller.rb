@@ -1,5 +1,7 @@
 class VenuesController < ApplicationController
 
+	layout "venue"
+
 def index
 	@venues = Venue.paginate(:page => params[:page])
 end

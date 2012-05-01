@@ -20,22 +20,20 @@
         </div>
       </nav>
     </header>
-    <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-          </div>
+     <div role="main" id="wrap-container" class="container">
+      <!--  render 'layouts/breadcrumbs'  -->
+      <%= render 'layouts/messages' %>
+      <div itemscope itemtype="http://schema.org/BarOrPub">
+        <div class="row">
+          <div class="span8">
+            <%= yield %>
+
           <footer>
 
           </footer>
         </div>
-      </div> <!--! end of .container -->
-      
-     </div> <!--! end of #main -->
+      </div>
+  </div> <!--! end of #main -->
 <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

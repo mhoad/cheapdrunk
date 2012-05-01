@@ -1,0 +1,91 @@
+<div class="page-header">
+	<span itemprop="name" class="venue-title"><h1><%= @venue.name %></h1></span>
+</div>
+<div class="well" >
+<!-- to be implemented later	
+	<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+   	<meta itemprop="latitude" content="40.75" />
+   	<meta itemprop="longitude" content="73.98" /> -->
+	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		<span itemprop="streetAddress" class="address"><b><%= @venue.street_address %></b></span><br>
+		<span itemprop="addressLocality" class="address"><b><%= @venue.suburb %></b></span>,
+		<span itemprop="postalCode" class="address"><b><%= @venue.postcode %></b></span>
+	</div> <!-- end postal address microdata-->
+	<p><span itemprop="telephone" class="address"><b><%= @venue.phone_number %></b></span></p>
+	<p><a itemprop="url" href="<%= @venue.url %>" rel="nofollow"><%= @venue.url %></a></p>
+	<p><small><b><%= @venue.description %></b></small></p>
+</div>
+	<!-- to be implemented later
+	<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+		<img src="img/5stars.gif"><br>
+	  	<p> Rated <span itemprop="ratingValue">5</span> / 5
+		based on <span itemprop="reviewCount">11</span> reviews </p>
+	</div>  end aggregate rating microdata -->
+
+	<ul class="thumbnails">
+		  <li class="span2">
+		    <span class="thumbnail">
+		      <img src="http://placehold.it/160x120" alt="">
+		    </span>
+		 </li>
+		<li class="span2">
+		    <span class="thumbnail">
+		      <img src="http://placehold.it/160x120" alt="">
+		    </span>
+		</li>
+		<li class="span2">
+		    <span class="thumbnail">
+		      <img src="http://placehold.it/160x120" alt="">
+		    </span>
+		</li>
+		<li class="span2">
+		    <span class="thumbnail">
+		      <img src="http://placehold.it/160x120" alt="">
+		    </span>
+		</li>
+		</ul>
+		
+		<!-- To be added later
+		<h3>Monday</h3>
+		<div itemprop="events" itemscope itemtype="http://schema.org/Event">
+			<meta itemprop="startDate" content="2016-04-21T20:00">
+			<meta itemprop="endDate" content="2016-04-21T20:00">
+			<div itemprop="name"><h5>Lunch Special</h5></div>
+			<p><span itemprop="description">$7 pizza and beer choose from Margarita, Vegetarian or Spanish and your choice of tap beer or wine.</span></p>
+		</div>  end event microdata -->
+
+	  </div>
+	  <div class="span4">
+		<ul class="thumbnails">
+		  <li class="span4">
+		    <a href="#" class="thumbnail">
+		      <img src="http://placehold.it/360x268" alt="">
+		    </a>
+		  </li>	  
+		<li><b>Advertisement:</b></li>
+	  <li class="span4">
+	    <a href="#" class="thumbnail">
+	      <img src="http://placehold.it/360x268" alt="">
+	    </a>
+	  </li>
+	
+	<li class="span3">
+		<b>Trading Hours:</b>
+	</li>
+	<li class="span3">
+	  <meta itemprop="openingHours" content="Mo-Sa 11:00-14:30">Monday 11am - 2:30pm <br>
+	  <meta itemprop="openingHours" content="Mo-Th 17:00-21:30">Tuesday 5pm - 9:30pm<br>
+	  <meta itemprop="openingHours" content="Fr-Sa 17:00-22:00">Wednesday 5pm - 10:00pm<br>
+	<meta itemprop="openingHours" content="Fr-Sa 17:00-22:00">Thursday 5pm - 10:00pm<br>
+	<meta itemprop="openingHours" content="Fr-Sa 17:00-22:00">Friday 5pm - 10:00pm<br>
+	<meta itemprop="openingHours" content="Fr-Sa 17:00-22:00">Saturday 5pm - 10:00pm<br>
+	<meta itemprop="openingHours" content="Fr-Sa 17:00-22:00">Sunday 5pm - 10:00pm<br>
+	</li>
+	</ul></div>
+	
+	
+	
+	</div>
+	</div><!-- end bar or pub microdata -->
+
+</div>
