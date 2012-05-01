@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="span6 offset3">
+    <h1>Update this venue</h1>
+
+
+<%= form_for(@venue) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :street_address %>
+  <%= f.text_field :street_address %>
+
+  <%= f.label :suburb %>
+  <%= f.text_field :suburb %>
+
+  <%= f.label :postcode %>
+  <%= f.text_field :postcode %>
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <div class="actions">
+     <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>
+  </div>
+</div>
