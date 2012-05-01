@@ -122,4 +122,22 @@ describe "suburbs" do
   end
 end
 
+describe "descriptions" do
+
+  describe "should not be too short" do
+    before { @venue.description = "a"*50 }
+    it { should_not be_valid }
+  end
+
+  describe "should not be too long" do
+    before { @venue.description = "a"*501 }
+    it { should_not be_valid }
+  end
+
+  describe "should accept a valid description" do
+    before { @venue.description = "a"*300 }
+    it { should be_valid }
+  end
+end
+
 end
