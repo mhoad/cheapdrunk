@@ -1,23 +1,22 @@
-    <div class="row-fluid offset2">
-    <div class="span8">
-	<h1>Browse Happy Hour Venues</h1>
-    <div class="row-fluid">
-    <% @venues.each do |venue| %>
-    <hr>
-        <div class="span8">
-    	<h3><%= link_to venue.name, venue %></h3> <br>
-    	<img src="http://placehold.it/80x80" class="venue-index-image">
-    	<span class="venue-index-text"><%= venue.description %></span>
-    </div>
-    <div class="span4 venue-index-details">
-    	<b><%= venue.street_address %></b> <br>
-    	<b><%= venue.suburb %></b>
-    </div>
-    
-    <% end %>
-    </div>
-    </div>
-    </div>
+<h1>Browse Happy Hour Venues</h1>
 
+<table class="venue-listing">
+  <% @venues.each do |venue| %>
+  
+  <tr >
+    <td colspan="3" class="venue-index-name"><h3><%= link_to venue.name, venue %></h3></td>
+  </tr>
+ 
+  
+  <tr class="venue-index-body">
+    <td class="venue-index-image"><img src="http://placehold.it/80x80"></td>
+    <td class="venue-index-text"><%= venue.description %></td>
+    <td class="venue-index-details">
+      <b><%= venue.street_address %></b> <br>
+      <b><%= venue.suburb %></b>
+    </td>
+  </tr>
 
-<%= will_paginate %>
+  <% end %>
+  
+</table> 

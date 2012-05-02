@@ -127,28 +127,30 @@ font-size: 1.05em;
  }
 
 .venue-index-image {
-  margin-right: 10px;
-  margin-bottom: 10px;
-  vertical-align:text-top;
-  position: absolute;
+width: 10%;
+vertical-align: top;  
 }
 
 .venue-index-details {
-  padding-top: 30px;
-  right: 500px;
-  text-align: right;
-  position: absolute;
+ width: 30%;
+ vertical-align: top;
 }
 
 .venue-index-text {
- position: relative;
- left: 90px;
- width: 300px;
+ width: 60%;
+ vertical-align: top;
 }
 
-.divider {
-  height: 1px;
-  width: 450px;
-  background-color: #000fff;
-  padding-bottom: 10px;
+.venue-listing {
+width: 100%;
+position: relative;
+left: 100px;
+}
+
+.venue-index-body {
+ height: 110px;
+}
+
+.venue-index-name {
+ padding-bottom: 10px;
 }
