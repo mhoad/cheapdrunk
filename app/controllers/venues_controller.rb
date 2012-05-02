@@ -11,11 +11,17 @@ def show
 end
 
 def new
-	
+	@venue = Venue.new
 end
 
 def create
-	
+	@venue = Venue.new(params[:venue])
+    if @venue.save
+      flash[:success] = "Thanks for contributing. Once your venue is approved we will add it to the site"
+      redirect_to root_path
+    else
+      render 'new'
+    end
 end
 
 def update
@@ -29,14 +35,14 @@ def update
 end
 
 def edit
-    @venue = Venue.find(params[:id])
+  @venue = Venue.find(params[:id])
 end
 
 
 def destroy
-	
+	Venue.find(params[:id]).destroy
+    flash[:success] = "Venue deleted."
+    redirect_to venues_path
 end
-
-
 
 end

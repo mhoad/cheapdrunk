@@ -2,13 +2,10 @@
 
 <table class="venue-listing">
   <% @venues.each do |venue| %>
-  
-  <tr >
+   <tr >
     <td colspan="3" class="venue-index-name"><h3><%= link_to venue.name, venue %></h3></td>
   </tr>
- 
-  
-  <tr class="venue-index-body">
+   <tr class="venue-index-body">
     <td class="venue-index-image"><img src="http://placehold.it/80x80"></td>
     <td class="venue-index-text"><%= venue.description %></td>
     <td class="venue-index-details">
@@ -18,5 +15,4 @@
   </tr>
 
   <% end %>
-  
-</table> 
+ </table> 
