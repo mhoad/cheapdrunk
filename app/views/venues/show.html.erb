@@ -65,12 +65,7 @@
 		      <img src="http://placehold.it/360x268" alt="">
 		    </a>
 		  </li>	  
-		<li><b>Advertisement:</b></li>
-	  <li class="span4">
-	    <a href="#" class="thumbnail">
-	      <img src="http://placehold.it/360x268" alt="">
-	    </a>
-	  </li>
+		<%= render 'venue_management' %>
 	
 	<li class="span3">
 		<b>Trading Hours:</b>
@@ -90,5 +85,5 @@
 	
 	</div>
 	</div><!-- end bar or pub microdata -->
-<%= link_to "Delete Venue", venue_path(params[:id]), method: "delete" %>
+
 </div>
