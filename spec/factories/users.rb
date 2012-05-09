@@ -9,4 +9,12 @@ FactoryGirl.define do
     # required if the Devise Confirmable module is used
     # confirmed_at Time.now
   end
+
+  factory :admin_user, class: User do
+  	name 'Admin User'
+  	email 'admin@admin.com'
+  	password 'bossman'
+  	password_confirmation 'bossman'
+  	admin true
+  end
 end

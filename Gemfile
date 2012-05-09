@@ -10,6 +10,8 @@ gem "will_paginate", ">= 3.0.3"
 gem 'pg', '0.12.2'
 gem "omniauth-facebook"
 gem "omniauth-twitter"
+gem "cancan", ">= 1.6.7"
+gem "rolify", ">= 3.1.0"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'

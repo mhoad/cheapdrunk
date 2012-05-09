@@ -35,6 +35,7 @@ def update
 end
 
 def edit
+  authorize! :edit, @user, :message => 'Not authorized as an administrator.'
   @venue = Venue.find(params[:id])
 end
 

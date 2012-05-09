@@ -60,9 +60,11 @@ describe "Venue Pages" do
   describe "edit venue" do
     let(:venue) { FactoryGirl.create(:venue) }
     let(:submit) { "Save changes" }
-
-    describe "correct edit account options shown to normal users" do
+    let(:user) { FactoryGirl.create(:admin_user) } #Since only admins have this ability
+    
+    describe "correct edit account options shown to admin users" do
       before do
+        sign_in user 
         visit edit_venue_path(venue) 
       end
       it { should have_selector('input',  id:   'venue_name') }
@@ -79,6 +81,7 @@ describe "Venue Pages" do
 
     describe "update a venue with correct information" do
       before do
+        sign_in user 
         visit edit_venue_path(venue) 
         fill_in "Name",       with: "Updated Venue"
         fill_in "Url",        with: "http://www.newvenueurl.com.au/"
@@ -88,6 +91,21 @@ describe "Venue Pages" do
       it { should have_selector('h1', text: 'Updated Venue') }
       it { should have_content('http://www.newvenueurl.com.au/') } 
     end
+  end
+
+  describe "ensure regular users cannot edit a venue" do
+    let(:venue) { FactoryGirl.create(:venue) }
+    let(:submit) { "Save changes" }
+    let(:user) { FactoryGirl.create(:user) } #Regular user
+
+    before do
+        sign_in user 
+        visit edit_venue_path(venue) 
+    end
+
+    it { should_not have_selector('input',  id:   'venue_name') }
+    it { should_not have_selector('input',  id:   'venue_name') }
+    it { should have_content("Not authorized as an administrator") }
   end
 
   describe "view venue" do
