@@ -34,10 +34,10 @@ class User < ActiveRecord::Base
 
   before_save { |user| user.email = email.downcase }
 
-  VALID_NAME_REGEX = /^\w[a-zA-Z ]+$/
+  VALID_NAME_REGEX = /^\w[a-zA-Z ]+$/ #Possible bug for Twitter usernames with numbers in them
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :name, presence: true, length:{ maximum: 50 }, format: { with: VALID_NAME_REGEX }
+  validates :name, presence: true, length:{ maximum: 50 }, format: { with: VALID_NAME_REGEX } 
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false } 
 
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
