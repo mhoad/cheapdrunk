@@ -83,15 +83,7 @@
 	
 <div class="span8">
 <%= render 'reviews/new' %>
-<% for review in @venue.reviews %>
-
-  <p><%= review.comment %></p>
-    <p><%= review.rating %></p>
-    <%= review.created_at %></p>
-    <% if can? :update, @venue %>
-      <%= link_to "Delete Review", venue_review_path(@venue.id, review.id), method: "delete" %>
-    <% end %>
-  <% end %>
+<%= render 'reviews/view' %>
 </div>	
 	</div>
 	</div><!-- end bar or pub microdata -->
