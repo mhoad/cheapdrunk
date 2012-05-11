@@ -1,4 +1,6 @@
 Cheapdrunk::Application.routes.draw do
+  resources :reviews
+
   resources :venues
 
   authenticated :user do

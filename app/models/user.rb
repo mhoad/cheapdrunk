@@ -31,6 +31,9 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :admin, :oauth
   # attr_accessible :title, :body
 
+  has_many :reviews
+  has_many :venues, :through => :reviews
+
   #Validations to ensure clean data
 
   before_save { |user| user.email = email.downcase }

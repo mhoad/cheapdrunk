@@ -81,7 +81,14 @@
 	</li>
 	</ul></div>
 	
-	
+
+
+<% for review in @venue.reviews %>
+
+  <p><%= review.comment %></p>
+    <p><%= review.rating %></p>
+    <%= review.created_at %></p>
+  <% end %>
 	
 	</div>
 	</div><!-- end bar or pub microdata -->
