@@ -1,0 +1,13 @@
+<% for review in @venue.reviews %>
+  <div itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <div itemprop="reviewBody"><%= review.comment %></div>
+    <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">author.name</span></div>
+  <div><meta itemprop="datePublished" content="2012-05-11"><%= review.created_at %></div>
+  <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+  <meta itemprop="worstRating" content="1"><span itemprop="ratingValue"><%= review.rating %></span> / <span itemprop="bestRating">5</span> stars</div>
+  </div>
+  <% if can? :update, @venue %>
+      <%= link_to "Delete Review", venue_review_path(@venue.id, review.id), method: "delete" %>
+    <% end %>
+<% end %>
