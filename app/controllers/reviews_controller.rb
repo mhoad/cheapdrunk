@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 	def create
-    authorize! :create, @user, :message => 'Please login to comment.'
+    
     @venue = Venue.find(params[:venue_id])
     @review = @venue.reviews.new(params[:review].merge(:user_id => current_user.id))
       if @review.save
