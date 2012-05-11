@@ -3,15 +3,19 @@
 <table class="venue-listing">
   <% @venues.each do |venue| %>
    <tr >
-    <td colspan="3" class="venue-index-name"><h3><%= link_to venue.name, venue %></h3></td>
+    <td colspan="3" class="venue-index-name"><h3><%= link_to venue.name, venue %></h3>
   </tr>
    <tr class="venue-index-body">
     <td class="venue-index-image"><img src="http://placehold.it/80x80"></td>
-    <td class="venue-index-text"><%= venue.description %></td>
+    <td class="venue-index-text"><%= venue.description %><br><span class="venue-index-stars"><br><%= display_stars(average_rating(venue.id)) %> 
+    Based on <b><%= venue.reviews.count %></b> votes</span></td><br>
+   
     <td class="venue-index-details">
+      
       <b><%= venue.street_address %></b> <br>
       <b><%= venue.suburb %></b>
     </td>
+    
   </tr>
 
   <% end %>
