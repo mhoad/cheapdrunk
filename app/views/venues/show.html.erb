@@ -81,7 +81,7 @@
 	</li>
 	</ul></div>
 	
-
+<div class="span8">
 <%= render 'reviews/new' %>
 <% for review in @venue.reviews %>
 
@@ -92,7 +92,7 @@
       <%= link_to "Delete Review", venue_review_path(@venue.id, review.id), method: "delete" %>
     <% end %>
   <% end %>
-	
+</div>	
 	</div>
 	</div><!-- end bar or pub microdata -->
 
