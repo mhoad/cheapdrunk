@@ -1,3 +1,21 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#review_comment {
+  margin-top: 15px;
+}
+
+.reviewBody {
+  padding: 10px 0px 15px 0px;
+}
+
+.label-important a {
+  color: white;
+}
+
+.delete_review {
+  position: absoulute;
+  left: 150px;
+}
+
