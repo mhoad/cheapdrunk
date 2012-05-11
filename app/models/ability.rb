@@ -10,7 +10,7 @@ class Ability
          can :read, :all
        end
 
-      if !user.email.blank?
+      if !user.email.blank? || user.oauth?
         can :create, :reviews
       end
     
