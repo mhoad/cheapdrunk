@@ -1,5 +1,5 @@
 
-<% if can? :create, @review %>
+<% if can? :manage, Review %>
 <%= form_for [@venue, Review.new] do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= radio_button_tag("review[rating]", "1", false, :class => "star") %>
