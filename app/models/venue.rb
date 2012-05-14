@@ -33,7 +33,7 @@ class Venue < ActiveRecord::Base
 
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
   validates :url, presence: true, format: { with: VALID_URL_REGEX }
-  validates :postcode, presence: true, length:{ is: 4 } #Australian post codes are 4 digits
+  validates :postcode, presence: true, numericality: true, length:{ is: 4 } #Australian post codes are 4 digits
   validates :description, presence: false, length:{ maximum: 500, minimum: 100 }
   validates :suburb, presence: true, format: { with: VALID_SUBURB_REGEX }, length:{ maximum: 20, minimum: 3 }
 
