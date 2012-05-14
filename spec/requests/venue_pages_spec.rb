@@ -122,12 +122,6 @@ describe "Venue Pages" do
       it { should have_content(venue.suburb) }
       it { should have_content(venue.phone_number) }
       it { should have_content(venue.url) }
-      # Hacky way to check schema.org markup is working correctly :(
-      it { should have_xpath("/html/body/div[@id='wrap-container']/div/div[@class='row']/div[@class='span8']/div[@class='well']/div/span[@class='address'][3]/b") }
-      it { should have_xpath("/html/body/div[@id='wrap-container']/div/div[@class='row']/div[@class='span8']/div[@class='well']/div/span[@class='address'][1]/b") }
-      it { should have_xpath("/html/body/div[@id='wrap-container']/div/div[@class='row']/div[@class='span8']/div[@class='well']/p[1]") }
-      it { should have_xpath("/html/body/div[@id='wrap-container']/div/div[@class='row']/div[@class='span8']/div[@class='well']/p[1]/span[@class='address']/b") }
-      it { should have_xpath("/html/body/div[@id='wrap-container']/div/div[@class='row']/div[@class='span8']/div[@class='well']/p[2]") }
     end
   end
 end

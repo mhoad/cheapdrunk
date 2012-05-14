@@ -21,7 +21,7 @@
        <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
          <meta itemprop="ratingValue" content="<%= average_rating(@venue.id) %>" />
          <%= display_stars(average_rating(@venue.id)) %> <br>
-         Based on <b><span itemprop="reviewCount"><%= @venue.reviews.count %></span></b> votes
+         Based on <b><span itemprop="reviewCount"><%= pluralize(@venue.reviews.count, 'vote') %></span></b>
        </div>  <!-- end aggregate rating microdata -->
 
       </div>
