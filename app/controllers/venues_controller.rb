@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
 
-	layout "venue"
+	layout "venue", :except => [:show]
 
 def index
 	@venues = Venue.paginate(:page => params[:page])
@@ -8,6 +8,7 @@ end
 
 def show
 	@venue = Venue.find(params[:id])
+  render :layout => "show_venue"
 end
 
 def new
