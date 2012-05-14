@@ -13,6 +13,8 @@
 #  url            :string(255)
 #  created_at     :datetime        not null
 #  updated_at     :datetime        not null
+#  latitude       :float
+#  longitude      :float
 #
 
 require 'spec_helper'

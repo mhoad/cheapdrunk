@@ -5,10 +5,10 @@
 	     <h1 class="venue-title"><span itemprop="name"><%= @venue.name %></span></h1>
       </div>
       <div class="well" >
-      <!-- to be implemented later	
+      	
 	     <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-   	    <meta itemprop="latitude" content="40.75" />
-   	    <meta itemprop="longitude" content="73.98" /> </span> -->
+   	    <meta itemprop="latitude" content="<%= @venue.latitude %>" />
+   	    <meta itemprop="longitude" content="<%= @venue.longitude %>" /> </span>
 	     <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 		      <span itemprop="streetAddress" class="address"><b><%= @venue.street_address %></b></span><br>
 		      <span itemprop="addressLocality" class="address"><b><%= @venue.suburb %></b></span>,
@@ -17,7 +17,6 @@
 	     <p><span itemprop="telephone" class="address"><b><%= @venue.phone_number %></b></span></p>
 	     <p><a itemprop="url" href="<%= @venue.url %>" rel="nofollow" target="_blank"><%= @venue.url %></a></p>
 	     <p><small><b><%= @venue.description %></b></small></p>
-       
        <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
          <meta itemprop="ratingValue" content="<%= average_rating(@venue.id) %>" />
          <%= display_stars(average_rating(@venue.id)) %> <br>
@@ -65,7 +64,10 @@
 		<ul class="thumbnails">
 		  <li class="span4">
 		    <a href="#" class="thumbnail">
-		      <img src="http://placehold.it/360x268" alt="">
+		      
+		      
+		      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{ @venue.latitude },#{ @venue.longitude }&markers=#{ @venue.latitude },#{ @venue.longitude }&zoom=15&size=360x268&maptype=roadmap&sensor=true" %>
+		      
 		    </a>
 		  </li>	  
 		<%= render 'venue_management' %>

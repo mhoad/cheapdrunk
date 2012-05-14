@@ -8,7 +8,7 @@
    <tr class="venue-index-body">
     <td class="venue-index-image"><img src="http://placehold.it/80x80"></td>
     <td class="venue-index-text"><%= venue.description %><br><span class="venue-index-stars"><br><%= display_stars(average_rating(venue.id)) %> 
-    Based on <b><%= venue.reviews.count %></b> votes</span></td><br>
+    Based on <b><%= pluralize(@venue.reviews.count, 'vote') %></b></span></td><br>
    
     <td class="venue-index-details">
       
