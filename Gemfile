@@ -42,8 +42,8 @@ end
 #Ensure that only the relevant gems are loaded depending upon the OS
 case HOST_OS
   when /darwin/i
-    gem 'rb-fsevent', :group => :development
-    gem 'growl', :group => :development
+    #gem 'rb-fsevent', :group => :development
+    #gem 'growl', :group => :development
   when /linux/i
     gem 'libnotify', :group => :development
     gem 'rb-inotify', :group => :development
