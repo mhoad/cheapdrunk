@@ -1,27 +1,29 @@
 <h1>Browse Happy Hour Venues</h1>
+<div class="template_time"> random: <strong><%= rand(900)+100 %></strong></div>
 
-
-
-<table class="venue-listing">
-  <% @venues.each do |venue| %>
-   <tr >
-    <td colspan="3" class="venue-index-name"><h3><%= link_to venue.name, venue %></h3>
-  </tr>
-   <tr class="venue-index-body">
-    <td class="venue-index-image"><img src="http://placehold.it/80x80"></td>
-    <td class="venue-index-text"><%= venue.description %><br><span class="venue-index-stars"><br><%= display_stars(average_rating(venue.id)) %> 
-    Based on <b><%= pluralize(@venue.reviews.count, 'vote') %></b></span></td><br>
-   
-    <td class="venue-index-details">
+<div data-pjax-container>
+  <table class="venue-listing">
+    <% @venues.each do |venue| %>
+     <tr >
+      <td colspan="3" class="venue-index-name"><h3><%= link_to venue.name, venue %></h3>
+    </tr>
+     <tr class="venue-index-body">
+      <td class="venue-index-image"><img src="http://placehold.it/80x80"></td>
+      <td class="venue-index-text"><%= venue.description %><br><span class="venue-index-stars"><br><%= display_stars(average_rating(venue.id)) %> 
+      Based on <b><%= pluralize(@venue.reviews.count, 'vote') %></b></span></td><br>
+     
+      <td class="venue-index-details">
+        
+        <b><%= venue.street_address %></b> <br>
+        <b><%= venue.suburb %></b>
+      </td>
       
-      <b><%= venue.street_address %></b> <br>
-      <b><%= venue.suburb %></b>
-    </td>
-    
-  </tr>
+    </tr>
 
-  <% end %>
- </table> 
+    <% end %>
+   </table> 
+
 <nav>
  <%= page_navigation_links @venues %>
 </nav>
+</div>

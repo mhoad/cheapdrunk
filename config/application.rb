@@ -18,6 +18,8 @@ end
 module Cheapdrunk
   class Application < Rails::Application
 
+    config.middleware.use Rack::Pjax
+    
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
       g.view_specs false
