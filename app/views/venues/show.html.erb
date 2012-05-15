@@ -67,7 +67,7 @@
 		    	<a class="various fancybox.iframe thumbnail" href="http://maps.google.com/?output=embed&amp;z=15&amp;t=m&amp;q=loc:<%= @venue.latitude %>+<%= @venue.longitude %>">
 
 		      
-		      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{ @venue.latitude },#{ @venue.longitude }&markers=#{ @venue.latitude },#{ @venue.longitude }&zoom=15&size=360x268&maptype=roadmap&sensor=true" %>
+		      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{ @venue.latitude },#{ @venue.longitude }&markers=#{ @venue.latitude },#{ @venue.longitude }&zoom=15&size=360x268&maptype=roadmap&sensor=true", :alt => "Map to #{@venue.name}" %>
 		      
 		    </a>
 		  </li>	  
