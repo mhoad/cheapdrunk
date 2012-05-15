@@ -2,6 +2,9 @@ class VenuesController < ApplicationController
 
 	layout "venue", :except => [:show]
 
+  add_breadcrumb "Homepage", :root_path
+  add_breadcrumb "Venues", :venues_path, :title => "Sydney Bars Pubs"
+
 def index
 	@venues = Venue.paginate(:page => params[:page])
 end
@@ -9,6 +12,7 @@ end
 def show
 	@venue = Venue.find(params[:id])
   render :layout => "show_venue"
+  
 end
 
 def new

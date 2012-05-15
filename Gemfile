@@ -13,6 +13,7 @@ gem "omniauth-twitter"
 gem "cancan", ">= 1.6.7"
 gem "rolify", ">= 3.1.0"
 gem "geocoder", "~> 1.1.1"
+gem "breadcrumbs_on_rails"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'

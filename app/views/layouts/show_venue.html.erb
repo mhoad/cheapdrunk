@@ -33,7 +33,11 @@
       </nav>
     </header>
      <div role="main" id="wrap-container" class="container">
-      <!--  render 'layouts/breadcrumbs'  -->
+      
+      <div itemprop="breadcrumb">
+        <%= render_breadcrumbs :separator => ' > ' %>
+      </div>
+
       <%= render 'layouts/messages' %>
     
             <%= yield %>
