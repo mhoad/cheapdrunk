@@ -40,7 +40,7 @@ class Venue < ActiveRecord::Base
   validates :suburb, presence: true, format: { with: VALID_SUBURB_REGEX }, length:{ maximum: 20, minimum: 3 }
 
   geocoded_by :full_address
-  after_validation :geocode#, :if => address_changed?
+  after_validation :geocode, :if => :address_changed?
 
   def full_address
     address = "#{self.street_address}, #{self.suburb}, #{self.postcode}, Australia"
