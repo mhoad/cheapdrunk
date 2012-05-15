@@ -39,7 +39,6 @@ group :development do
   gem "guard-rails", ">= 0.0.3"
   gem "guard-rspec", ">= 0.4.3"
   gem 'annotate', '~> 2.4.1.beta'
-end
 
 #Ensure that only the relevant gems are loaded depending upon the OS
 case HOST_OS
@@ -53,4 +52,5 @@ case HOST_OS
     gem 'rb-fchange', :group => :development
     gem 'win32console', :group => :development
     gem 'rb-notifu', :group => :development
+end
 end
