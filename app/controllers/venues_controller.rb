@@ -6,7 +6,7 @@ class VenuesController < ApplicationController
   add_breadcrumb "Venues", :venues_path, :title => "Sydney Bars Pubs"
 
 def index
-	@venues = Venue.paginate(:page => params[:page])
+	@venues = Venue.paginate(:page => params[:page]).per_page(2)
 end
 
 def show

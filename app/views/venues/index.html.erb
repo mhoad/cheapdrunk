@@ -1,5 +1,7 @@
 <h1>Browse Happy Hour Venues</h1>
 
+
+
 <table class="venue-listing">
   <% @venues.each do |venue| %>
    <tr >
@@ -20,3 +22,6 @@
 
   <% end %>
  </table> 
+<nav>
+ <%= page_navigation_links @venues %>
+</nav>
