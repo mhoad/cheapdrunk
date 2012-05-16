@@ -17,10 +17,12 @@ end
 
 def new
 	@venue = Venue.new
+  @venue.trading_times.new 
 end
 
 def create
 	@venue = Venue.new(params[:venue])
+
     if @venue.save
       flash[:success] = "Thanks for contributing. Once your venue is approved we will add it to the site"
       redirect_to root_path
