@@ -11,25 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120514115540) do
-
-  create_table "rates", :force => true do |t|
-    t.integer "score"
-  end
-
-  create_table "ratings", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "rate_id"
-    t.integer  "rateable_id"
-    t.string   "rateable_type", :limit => 32
-    t.text     "free_text"
-    t.string   "rater_name"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
-  end
-
-  add_index "ratings", ["rate_id"], :name => "index_ratings_on_rate_id"
-  add_index "ratings", ["rateable_id", "rateable_type"], :name => "index_ratings_on_rateable_id_and_rateable_type"
+ActiveRecord::Schema.define(:version => 20120516053001) do
 
   create_table "reviews", :force => true do |t|
     t.text     "comment"
@@ -50,6 +32,24 @@ ActiveRecord::Schema.define(:version => 20120514115540) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "trading_times", :force => true do |t|
+    t.integer  "venue_id"
+    t.datetime "monday_opens_at"
+    t.datetime "monday_closes_at"
+    t.datetime "tuesday_opens_at"
+    t.datetime "tuesday_closes_at"
+    t.datetime "wednesday_opens_at"
+    t.datetime "wednesday_closes_at"
+    t.datetime "thursday_opens_at"
+    t.datetime "thursday_closes_at"
+    t.datetime "friday_opens_at"
+    t.datetime "friday_closes_at"
+    t.datetime "saturday_opens_at"
+    t.datetime "saturday_closes_at"
+    t.datetime "sunday_opens_at"
+    t.datetime "sunday_closes_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
