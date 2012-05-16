@@ -15,7 +15,7 @@
     </div>
     <div class="listing-body">
       <span class="listing-logo"><img src="http://placehold.it/80x80"></span>
-      <span class="listing-description"><%= venue.description %></span>
+      <span class="listing-description"><%= truncate(venue.description, :length => 215, :separator => ' ', :omission => '...') %></span>
       <span class="listing-details">
         <%= venue.street_address %> <br>
         <%= venue.suburb %> <br>
