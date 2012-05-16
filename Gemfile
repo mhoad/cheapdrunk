@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'jquery-rails'
-gem "devise", ">= 2.1.0.rc"
+gem "devise", ">= 2.1.0"
 gem "simple_form"
 gem "will_paginate", ">= 3.0.3"
 gem 'pg', '0.12.2'
