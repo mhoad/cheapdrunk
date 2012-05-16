@@ -16,6 +16,7 @@ def show
 end
 
 def new
+  authorize! :new, @user, :message => 'Not authorized as an administrator.'
 	@venue = Venue.new
   @venue.trading_times.new 
 end

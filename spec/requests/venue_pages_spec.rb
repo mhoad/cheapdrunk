@@ -6,6 +6,12 @@ describe "Venue Pages" do
 
 	describe "new venues" do
 
+    let(:venue) { FactoryGirl.create(:venue) }
+    let(:submit) { "Submit" }
+    let(:user) { FactoryGirl.create(:admin_user) } #Since only admins have this ability
+
+    before { sign_in user }
+
     describe "add venue page" do
 		  before { visit new_venue_path }
     	  it { should have_selector('h1',     text: 'Submit a new venue') }
@@ -21,9 +27,9 @@ describe "Venue Pages" do
       end
 
     describe "submitting a venue" do 
+      
       before { visit new_venue_path }
-      let(:submit) { "Submit" }
-
+      
       describe "with invalid information" do
         it "should not create a venue" do
           expect { click_button submit }.not_to change(Venue, :count)
