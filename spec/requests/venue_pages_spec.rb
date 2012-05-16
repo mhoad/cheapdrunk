@@ -22,7 +22,7 @@ describe "Venue Pages" do
 
     describe "submitting a venue" do 
       before { visit new_venue_path }
-      let(:submit) { "Submit Venue" }
+      let(:submit) { "Submit" }
 
       describe "with invalid information" do
         it "should not create a venue" do
@@ -59,7 +59,7 @@ describe "Venue Pages" do
 
   describe "edit venue" do
     let(:venue) { FactoryGirl.create(:venue) }
-    let(:submit) { "Save changes" }
+    let(:submit) { "Submit" }
     let(:user) { FactoryGirl.create(:admin_user) } #Since only admins have this ability
     
     describe "correct edit account options shown to admin users" do
@@ -95,7 +95,7 @@ describe "Venue Pages" do
 
   describe "ensure regular users cannot edit a venue" do
     let(:venue) { FactoryGirl.create(:venue) }
-    let(:submit) { "Save changes" }
+    let(:submit) { "Submit" }
     let(:user) { FactoryGirl.create(:user) } #Regular user
 
     before do
@@ -116,7 +116,6 @@ describe "Venue Pages" do
         visit venue_path(venue) 
       end
       it { should have_content(venue.name) }
-      #it { should have_content(venue.description) } <= Possible bug: investigate later
       it { should have_content(venue.street_address) }
       it { should have_content(venue.postcode) }
       it { should have_content(venue.suburb) }
