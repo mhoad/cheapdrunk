@@ -12,7 +12,12 @@ module ReviewsHelper
       @venue.reviews.each do |review|
       @average = @average + review.rating
       end
-      @average / @venue.reviews.count.round(0).to_int
+      @average / @venue.reviews.count
     end
+  end
+
+  def average_rating_percent(average)
+    @average_percent = (average.to_f / 5.to_f) * 100
+    number_to_percentage(@average_percent, :precision => 0) 
   end
 end
